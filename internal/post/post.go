@@ -6,11 +6,11 @@ import (
 )
 
 type Repository struct {
-	db *db.Database
+	DB *db.Database
 }
 
 func NewRepository(db *db.Database) *Repository {
-	return &Repository{db: db}
+	return &Repository{DB: db}
 }
 
 func (r *Repository) HandlePosts(w http.ResponseWriter, req *http.Request) {

@@ -11,7 +11,7 @@ type Database struct {
 }
 
 func NewDatabase(cfg *config.Config) *Database {
-	connStr := "user=" + cfg.DBConfig.User + " password=" + cfg.DBConfig.Password + " dbname=" + cfg.DBConfig.DBName + " host=" + cfg.DBConfig.Host + " port=" + string(cfg.DBConfig.Port) + " sslmode=disable"
+	connStr := "user=" + cfg.DBConfig.User + " password=" + cfg.DBConfig.Password + " dbname=" + cfg.DBConfig.DBName + " host=" + cfg.DBConfig.Host + " port=" + cfg.DBConfig.Port + " sslmode=disable"
 	db, err := sql.Open("postgres", connStr)
 	if err != nil {
 		panic(err)
